@@ -1,9 +1,9 @@
 DB_CONFIG = {
-    "host": "sql.freedb.tech",
+    "host": "proxy.rlwy.net",
     "user": "freedb_akil_dernane",
-    "password": "ch%xK!4QjhjDR&U",
-    "database": "freedb_edt_examens",
-    "port": 3306,
+    "password": "MrclKbTPkcvCxSTUIPCxAfSXkwCZJtaC",
+    "database": "edt_examens",
+    "port": 31145,
 }
 
 EXAM_DURATION_MIN = 120
