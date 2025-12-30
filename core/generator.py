@@ -54,7 +54,7 @@ def generate_edt(initial_conn,
     new_module = True
     new_slot = False
     generated_exams_count = 0
-    while modules and generated_exams_count<50:
+    while modules:
         if not free_rooms or new_slot:
             free_rooms = models.get_free_rooms_for_slot(slot, initial_conn)
         if not profs_slot or new_slot:
