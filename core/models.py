@@ -2,7 +2,7 @@
 
 from datetime import datetime
 from typing import List, Dict
-from core.conflicts import has_student_conflict_for_module_in_slot, has_student_conflict_for_module_in_slot_cached, \
+from core.conflicts import  \
     has_group_conflict
 
 def get_students_count(conn) -> int:

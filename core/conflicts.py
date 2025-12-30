@@ -2,8 +2,6 @@
 
 from typing import Dict
 from datetime import datetime
-from db.connection import get_connection
-import time
 
 
 def get_student_conflicts_sumary(student_conn):
