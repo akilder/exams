@@ -92,9 +92,3 @@ def generate_edt(initial_conn,
             new_slot = True
     return generated_exams_count
 
-
-if __name__ == "__main__":
-    from db.connection import get_connection
-
-    conn = get_connection()
-    generate_edt(conn)

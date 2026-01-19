@@ -93,21 +93,20 @@ for i, (sid, cap, t) in enumerate(salles):
     w(f"('S{sid}', {cap}, '{t}'){sep}")
 w()
 
-groups = []  # (group_id, formation_id, nbr_etudiants)
-GROUPS_PER_FORMATION = 5  # for example
+groups = []
+GROUPS_PER_FORMATION = 5
 
 group_id_counter = 1
 w("INSERT INTO groups (nom, formation_id, nbr_etudiants) VALUES")
 for f_id, nb_mod in formations:
     for g in range(GROUPS_PER_FORMATION):
-        nbr_etudiants = 0  # will be updated later when generating students
+        nbr_etudiants = 0
         sep = "," if not (f_id == formations[-1][0] and g == GROUPS_PER_FORMATION-1) else ";"
         w(f"('Group {group_id_counter}', {f_id}, {nbr_etudiants}){sep}")
         groups.append((group_id_counter, f_id))
         group_id_counter += 1
 w()
 
-# Generate etudiants with group_id
 etudiants = []  # (etu_id, formation_id, group_id)
 
 w("INSERT INTO etudiants (nom, prenom, formation_id, group_id) VALUES")
@@ -131,12 +130,10 @@ for etu_id, f_id, group_id in etudiants:
     min_mod = max(1, int(len(f_mods) * 0.8))
     max_mod = len(f_mods)
     num_modules = min(len(f_mods), random.randint(min_mod, max_mod))
-    # randomly pick modules
     for mid in random.sample(f_mods, num_modules):
         inscriptions.append((etu_id, mid))
 
 
-# batch insert
 for i in range(0, len(inscriptions), BATCH_SIZE_INSCRIPTIONS):
     batch = inscriptions[i:i + BATCH_SIZE_INSCRIPTIONS]
     w("INSERT INTO inscriptions (etudiant_id, module_id) VALUES")

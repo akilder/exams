@@ -1,12 +1,9 @@
 DB_CONFIG = {
-    "host": "proxy.rlwy.net",
-    "user": "root",
-    "password": "MrclKbTPkcvCxSTUIPCxAfSXkwCZJtaC",
-    "database": "edt_examens",
-    "port": 31145,
+    "host": "mysql-3008eea9-dernanedjihad8-0b57.j.aivencloud.com",
+    "user": "avnadmin",
+    "password": "AVNS_RUYc4Z44Sbb-eSkueB0",
+    "database": "defaultdb",
+    "port": 28828,
 }
 
-EXAM_DURATION_MIN = 120
-MAX_EXAMS_PER_PROF_PER_DAY = 3
-MAX_EXAMS_PER_STUDENT_PER_DAY = 1
-EXAM_PERIOD_DAYS = 10
+

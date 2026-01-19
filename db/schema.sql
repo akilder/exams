@@ -436,7 +436,7 @@ BEGIN
         WHERE es.salle_id = NEW.salle_id
           AND e1.date_heure = e2.date_heure
     ) THEN
-        SIGNAL SQLSTATE '45000'
+        SIGNAL SQLSTATE '4500'
         SET MESSAGE_TEXT = 'Salle already used at this time';
     END IF;
 END$$

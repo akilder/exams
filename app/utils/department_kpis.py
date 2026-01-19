@@ -20,7 +20,7 @@ def department_kpis(conn, role='',dep_id=''):
         st.info("No departments found.")
         return
 
-    st.markdown("## 📊 Global Department KPIs")
+    st.markdown("## Global Department KPIs")
     total_departments = len(df)
     total_formations = df["nb_formations"].sum()
     total_modules = df["nb_modules"].sum()
@@ -30,17 +30,17 @@ def department_kpis(conn, role='',dep_id=''):
     total_rooms_used = df["salles_utilisees"].sum()
 
     kpi_cols = st.columns(7)
-    kpi_cols[0].metric("🏢 Departments", total_departments)
-    kpi_cols[1].metric("📚 Formations", total_formations)
-    kpi_cols[2].metric("📖 Modules", total_modules)
-    kpi_cols[3].metric("📝 Exams", total_exams)
-    kpi_cols[4].metric("👨‍🎓 Students", total_students)
-    kpi_cols[5].metric("👩‍🏫 Professors", total_profs)
-    kpi_cols[6].metric("🏫 Rooms Used", total_rooms_used)
+    kpi_cols[0].metric("Departments", total_departments)
+    kpi_cols[1].metric("Formations", total_formations)
+    kpi_cols[2].metric("Modules", total_modules)
+    kpi_cols[3].metric("Exams", total_exams)
+    kpi_cols[4].metric("Students", total_students)
+    kpi_cols[5].metric("Professors", total_profs)
+    kpi_cols[6].metric("Rooms Used", total_rooms_used)
 
     st.markdown("---")
     if not dep_id:
-        st.markdown("## 🏛 Department Breakdown")
+        st.markdown("##Department Breakdown")
         department_options = ["All Departments"] + df["departement_nom"].tolist()
         selected_department = st.selectbox("Select Department", department_options)
 
